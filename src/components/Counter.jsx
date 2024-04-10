@@ -1,13 +1,21 @@
 import React from 'react'
-
+import { useState } from 'react'
 const Counter = () => {
+  const [counter,setCount] = useState(0);
+  const Increase = ()=>{
+    setCount(counter+1);
+  }
+  const Decrease = ()=>{
+    setCount(counter-1);
+  }
+
   return (
     <div className="counter">
       <h>Counter 1</h>
       <hr></hr>
-      <p>{/*카운트한 숫자가 들어가요*/}</p>
-      <button>-1</button>
-      <button>+1</button>
+      <p>{counter}</p>
+      <button onClick={Decrease}>-1</button>
+      <button onClick={Increase}>+1</button>
     </div>
   )
 }
